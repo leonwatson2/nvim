@@ -5,9 +5,10 @@ return  {
     require('lualine').setup({
       options = {
         icons_enabled = true,
-        theme = 'dracula',
-        section_separators = { left = '', right = '' },
-        component_separators = { left = '', right = '' },
+        theme = 'horizon',
+        -- Uncomment on windows terminals, or install https://wezfurlong.org/wezterm/installation.html
+        -- section_separators = { left = '', right = '' },
+        -- component_separators = { left = '', right = '' },
       },
     })
   end
