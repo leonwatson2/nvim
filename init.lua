@@ -15,7 +15,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   end
 end
 vim.opt.rtp:prepend(lazypath)
+
 require("vim-options")
+require("custom-commands")
 require("keybinds")
 require("lazy").setup("plugins")
 
