@@ -26,6 +26,7 @@ vim.keymap.set('t', '<ESC>', [[<C-d>]], { noremap = true })
 vim.keymap.set('n', '<C-v>', '"+p', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-e>', '"+y', { noremap = true, silent = true })
 
-vim.keymap.set('n', '<C-Z>', ':w', { noremap = true, silent = true })
+
+vim.keymap.set('n', '<C-Z>', ':w<CR>', { noremap = true, silent = false })
 
 vim.keymap.set('n', 'w', '<nop>')
