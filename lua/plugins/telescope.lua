@@ -6,6 +6,7 @@ return {
       local builtin = require("telescope.builtin")
       vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
       vim.keymap.set('n', '<leader>pv', builtin.live_grep, {})
+      -- NOTE: make sure ripgrep, brew install ripgrep, is installed for live_grep 
     end
   },
   {
