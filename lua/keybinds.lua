@@ -27,6 +27,10 @@ vim.keymap.set('n', '<C-v>', '"+p', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-e>', '"+y', { noremap = true, silent = true })
 
 
+-- search
+vim.keymap.set('n', '<Leader>/', ':noh<CR>', { noremap = true, silent = true })
+
+-- saving
 vim.keymap.set('n', '<C-Z>', ':w<CR>', { noremap = true, silent = false })
 
 vim.keymap.set('n', 'w', '<nop>')
