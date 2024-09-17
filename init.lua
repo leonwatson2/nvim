@@ -20,7 +20,7 @@ require("vim-options")
 require("custom-commands")
 require("keybinds")
 require("lazy").setup("plugins")
-
+require("snippets")
 
 
 
