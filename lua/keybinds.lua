@@ -34,3 +34,6 @@ vim.keymap.set('n', '<Leader>/', ':noh<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-Z>', ':w<CR>', { noremap = true, silent = false })
 
 vim.keymap.set('n', 'w', '<nop>')
+
+-- source the init.lua file 
+vim.keymap.set('n', '<Leader>so', ':%so<CR>', { noremap = true, silent = true })
