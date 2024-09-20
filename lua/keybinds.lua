@@ -24,7 +24,7 @@ vim.keymap.set('t', '<ESC>', [[<C-d>]], { noremap = true })
 
 -- copy paste commands
 vim.keymap.set('n', '<C-v>', '"+p', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-e>', '"+y', { noremap = true, silent = true })
+vim.keymap.set('v', '<C-e>', '"+y', { noremap = true, silent = true })
 
 
 -- search
