@@ -11,7 +11,7 @@ vim.keymap.set("n", "<leader>ef", function()
 end, { noremap = true, silent = true, desc = "Fix with ESLint and Reload" })
 
 -- window navigations
-vim.keymap.set("n", "wy", "<C-w>h", { noremap = true, silent = false, desc = "Move to left window" })
+vim.keymap.set("n", "wb", "<C-w>h", { noremap = true, silent = false, desc = "Move to left window" })
 vim.keymap.set("n", "wj", "<C-w>j", { noremap = true, silent = true, desc = "Move to window below" })
 vim.keymap.set("n", "wk", "<C-w>k", { noremap = true, silent = true, desc = "Move to window above" })
 vim.keymap.set("n", "wl", "<C-w>l", { noremap = true, silent = true, desc = "Move to right window" })

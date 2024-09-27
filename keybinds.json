@@ -30,11 +30,11 @@
     "modes": [
       "n"
     ],
-    "key": "wy",
+    "key": "wb",
     "command": "<C-w>h",
     "description": "Move to left window",
     "method": "line",
-    "line": "vim.keymap.set(\"n\", \"wy\", \"<C-w>h\", { noremap = true, silent = false, desc = \"Move to left window\" })"
+    "line": "vim.keymap.set(\"n\", \"wb\", \"<C-w>h\", { noremap = true, silent = false, desc = \"Move to left window\" })"
   },
   {
     "modes": [
