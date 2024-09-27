@@ -1,0 +1,338 @@
+[
+  {
+    "modes": [
+      "i"
+    ],
+    "key": "jk",
+    "command": "<ESC>",
+    "description": "Leaves Insert Mode",
+    "method": "line",
+    "line": "-- vim.keymap.set(\"i\", \"jk\", \"<ESC>\", { desc = \"Leaves Insert Mode\"})"
+  },
+  {
+    "modes": "i",
+    "key": "jk",
+    "command": "function() vim.cmd(\"stopinsert\") end",
+    "description": "Leave Insert Mode and Organize Imports with TSTools",
+    "line": [
+      "vim.keymap.set(\"i\", \"jk\", function()",
+      "vim.cmd(\"stopinsert\")",
+      "end, { desc = \"Leave Insert Mode and Organize Imports with TSTools\" })"
+    ],
+    "method": "block"
+  },
+  {
+    "modes": "n",
+    "key": "<leader>ef",
+    "command": "function()  vim.cmd(\"w\")  vim.cmd(\"!npx eslint --fix %\")  vim.cmd(\"edit\") end",
+    "description": "Fix with ESLint and Reload",
+    "line": [
+      "vim.keymap.set(\"n\", \"<leader>ef\", function()",
+      "",
+      "vim.cmd(\"w\")",
+      "",
+      "vim.cmd(\"!npx eslint --fix %\")",
+      "",
+      "vim.cmd(\"edit\")",
+      "end, { noremap = true, silent = true, desc = \"Fix with ESLint and Reload\" })"
+    ],
+    "method": "block"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "wy",
+    "command": "<C-w>h",
+    "description": "Move to left window",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"wy\", \"<C-w>h\", { noremap = true, silent = false, desc = \"Move to left window\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "wj",
+    "command": "<C-w>j",
+    "description": "Move to window below",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"wj\", \"<C-w>j\", { noremap = true, silent = true, desc = \"Move to window below\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "wk",
+    "command": "<C-w>k",
+    "description": "Move to window above",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"wk\", \"<C-w>k\", { noremap = true, silent = true, desc = \"Move to window above\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "wl",
+    "command": "<C-w>l",
+    "description": "Move to right window",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"wl\", \"<C-w>l\", { noremap = true, silent = true, desc = \"Move to right window\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "<Leader>tt",
+    "command": "<C-w>t",
+    "description": "Move to top window",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"<Leader>tt\", \"<C-w>t\", { noremap = true, silent = true, desc = \"Move to top window\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "<Leader>pp",
+    "command": "<C-w>p",
+    "description": "Switch to previous window",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"<Leader>pp\", \"<C-w>p\", { noremap = true, silent = true, desc = \"Switch to previous window\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "<Leader>ww",
+    "command": "<C-w>w",
+    "description": "Switch to next window",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"<Leader>ww\", \"<C-w>w\", { noremap = true, silent = true, desc = \"Switch to next window\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "<A-K>",
+    "command": ":m-2<CR>==",
+    "description": "Move line up",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"<A-K>\", \":m-2<CR>==\", { noremap = true, silent = true, desc = \"Move line up\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "<A-J>",
+    "command": ":m+1<CR>==",
+    "description": "Move line down",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"<A-J>\", \":m+1<CR>==\", { noremap = true, silent = true, desc = \"Move line down\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "<A-S-Down>",
+    "command": ":m+1<CR>==",
+    "description": "Move line down with Shift",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"<A-S-Down>\", \":m+1<CR>==\", { noremap = true, silent = true, desc = \"Move line down with Shift\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "<A-S-Up>",
+    "command": ":m-2<CR>==",
+    "description": "Move line up with Shift",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"<A-S-Up>\", \":m-2<CR>==\", { noremap = true, silent = true, desc = \"Move line up with Shift\" })"
+  },
+  {
+    "modes": [
+      "t"
+    ],
+    "key": "<C-d>",
+    "command": "[[<C-\\><C-n>]]",
+    "description": "Exit terminal mode",
+    "method": "line",
+    "line": "vim.keymap.set(\"t\", \"<C-d>\", [[<C-\\><C-n>]], { noremap = true, desc = \"Exit terminal mode\" })"
+  },
+  {
+    "modes": [
+      "t"
+    ],
+    "key": "<ESC>",
+    "command": "[[<C-d>]]",
+    "description": "Exit terminal",
+    "method": "line",
+    "line": "vim.keymap.set(\"t\", \"<ESC>\", [[<C-d>]], { noremap = true, desc = \"Exit terminal\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "<C-v>",
+    "command": "+p",
+    "description": "Paste from clipboard",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"<C-v>\", '\"+p', { noremap = true, silent = true, desc = \"Paste from clipboard\" })"
+  },
+  {
+    "modes": [
+      "v"
+    ],
+    "key": "<C-e>",
+    "command": "+y",
+    "description": "Copy to clipboard",
+    "method": "line",
+    "line": "vim.keymap.set(\"v\", \"<C-e>\", '\"+y', { noremap = true, silent = true, desc = \"Copy to clipboard\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "<Leader>/",
+    "command": ":noh<CR>",
+    "description": "Clear search highlights",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"<Leader>/\", \":noh<CR>\", { noremap = true, silent = true, desc = \"Clear search highlights\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "<C-Z>",
+    "command": ":w<CR>",
+    "description": "Save file",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"<C-Z>\", \":w<CR>\", { noremap = true, silent = false, desc = \"Save file\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "K",
+    "command": "vim.lsp.buf.hover",
+    "description": "Show hover info",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"K\", vim.lsp.buf.hover, { desc = \"Show hover info\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "gd",
+    "command": "vim.lsp.buf.definition",
+    "description": "Go to definition",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"gd\", vim.lsp.buf.definition, { desc = \"Go to definition\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "<leader>e",
+    "command": "vim.diagnostic.open_float",
+    "description": "Show diagnostics",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"<leader>e\", vim.diagnostic.open_float, { desc = \"Show diagnostics\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "<leader>kd",
+    "command": "vim.lsp.buf.type_definition",
+    "description": "Show type definition",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"<leader>kd\", vim.lsp.buf.type_definition, { desc = \"Show type definition\" })"
+  },
+  {
+    "modes": [
+      " \"n",
+      "v\" "
+    ],
+    "key": "<leader>ca",
+    "command": "vim.lsp.buf.code_action",
+    "description": "Show code actions",
+    "method": "line2",
+    "line": "vim.keymap.set({ \"n\", \"v\" }, \"<leader>ca\", vim.lsp.buf.code_action, { desc = \"Show code actions\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "<leader>rn",
+    "command": "vim.lsp.buf.rename",
+    "description": "Rename symbol",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"<leader>rn\", vim.lsp.buf.rename, { desc = \"Rename symbol\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "<leader>rw",
+    "command": "viw\\\"p",
+    "description": "Replace word with default register",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"<leader>rw\", \"viw\\\"p\", { noremap = true, silent = true, desc = \"Replace word with default register\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "w",
+    "command": "<nop>",
+    "description": "Disable default ",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"w\", \"<nop>\", { desc = \"Disable default 'w' key action\" })"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "<Leader>so",
+    "command": ":%so<CR>",
+    "description": "Source init.lua",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"<Leader>so\", \":%so<CR>\", { noremap = true, silent = true, desc = \"Source init.lua\" })"
+  },
+  {
+    "modes": "n",
+    "key": "<leader>ls",
+    "command": "function() -- List of language servers to check and start local servers = { { name = \"tsserver\", command = \"LspStart tsserver\" }",
+    "description": "Start LSP servers if not running",
+    "line": [
+      "vim.keymap.set(\"n\", \"<leader>ls\", function()",
+      "-- List of language servers to check and start",
+      "local servers = {",
+      "{ name = \"tsserver\", command = \"LspStart tsserver\" },",
+      "{ name = \"typescript-tools\", command = \"LspStart typescript-tools\" },",
+      "{ name = \"tailwindcss\", command = \"LspStart tailwindcss\" },",
+      "}",
+      "",
+      "-- Get the currently active LSP clients",
+      "local clients = vim.lsp.get_active_clients()",
+      "local active_servers = {}",
+      "",
+      "-- Check which servers are active",
+      "for _, client in ipairs(clients) do",
+      "active_servers[client.name] = true",
+      "end",
+      "",
+      "-- Start servers if they are not active",
+      "for _, server in ipairs(servers) do",
+      "if not active_servers[server.name] then",
+      "vim.cmd(server.command)",
+      "print(server.name .. \" started\")",
+      "else",
+      "print(server.name .. \" is already running\")",
+      "end",
+      "end",
+      "end, { noremap = true, silent = true, desc = \"Start LSP servers if not running\" })"
+    ],
+    "method": "block"
+  }
+]
