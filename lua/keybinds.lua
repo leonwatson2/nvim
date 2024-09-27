@@ -1,9 +1,6 @@
 vim.g.mapleader = " "
 
--- vim.keymap.set("i", "jk", "<ESC>", { desc = "Leaves Insert Mode"})
-vim.keymap.set("i", "jk", function()
-	vim.cmd("stopinsert")
-end, { desc = "Leave Insert Mode and Organize Imports with TSTools" })
+vim.keymap.set("i", "jk", "<ESC>", { desc = "Leaves Insert Mode"})
 vim.keymap.set("n", "<leader>ef", function()
 
   vim.cmd("w")
@@ -11,7 +8,7 @@ vim.keymap.set("n", "<leader>ef", function()
   vim.cmd("!npx eslint --fix %")
 
   vim.cmd("edit")
-end, { desc = "Fix with ESLint and Reload", noremap = true, silent = true })
+end, { noremap = true, silent = true, desc = "Fix with ESLint and Reload" })
 
 -- window navigations
 vim.keymap.set("n", "wy", "<C-w>h", { noremap = true, silent = false, desc = "Move to left window" })
@@ -111,3 +108,4 @@ end
 
 -- Keybinding to toggle Copilot
 vim.keymap.set("n", "<leader>cop", toggle_copilot, { noremap = true, silent = true, desc = "Toggle Copilot" })
+

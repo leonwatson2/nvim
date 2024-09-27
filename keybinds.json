@@ -7,19 +7,7 @@
     "command": "<ESC>",
     "description": "Leaves Insert Mode",
     "method": "line",
-    "line": "-- vim.keymap.set(\"i\", \"jk\", \"<ESC>\", { desc = \"Leaves Insert Mode\"})"
-  },
-  {
-    "modes": "i",
-    "key": "jk",
-    "command": "function() vim.cmd(\"stopinsert\") end",
-    "description": "Leave Insert Mode and Organize Imports with TSTools",
-    "line": [
-      "vim.keymap.set(\"i\", \"jk\", function()",
-      "vim.cmd(\"stopinsert\")",
-      "end, { desc = \"Leave Insert Mode and Organize Imports with TSTools\" })"
-    ],
-    "method": "block"
+    "line": "vim.keymap.set(\"i\", \"jk\", \"<ESC>\", { desc = \"Leaves Insert Mode\"})"
   },
   {
     "modes": "n",
@@ -250,8 +238,8 @@
   },
   {
     "modes": [
-      " \"n",
-      "v\" "
+      "n",
+      "v"
     ],
     "key": "<leader>ca",
     "command": "vim.lsp.buf.code_action",
@@ -278,16 +266,6 @@
     "description": "Replace word with default register",
     "method": "line",
     "line": "vim.keymap.set(\"n\", \"<leader>rw\", \"viw\\\"p\", { noremap = true, silent = true, desc = \"Replace word with default register\" })"
-  },
-  {
-    "modes": [
-      "n"
-    ],
-    "key": "w",
-    "command": "<nop>",
-    "description": "Disable default ",
-    "method": "line",
-    "line": "vim.keymap.set(\"n\", \"w\", \"<nop>\", { desc = \"Disable default 'w' key action\" })"
   },
   {
     "modes": [
@@ -334,5 +312,15 @@
       "end, { noremap = true, silent = true, desc = \"Start LSP servers if not running\" })"
     ],
     "method": "block"
+  },
+  {
+    "modes": [
+      "n"
+    ],
+    "key": "<leader>cop",
+    "command": "toggle_copilot",
+    "description": "Toggle Copilot",
+    "method": "line",
+    "line": "vim.keymap.set(\"n\", \"<leader>cop\", toggle_copilot, { noremap = true, silent = true, desc = \"Toggle Copilot\" })"
   }
 ]
