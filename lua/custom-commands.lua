@@ -14,3 +14,9 @@ end, {})
   vim.cmd("cd ~/Coding")
   vim.cmd(":Neotree reveal <CR>")
 end, {})
+vim.api.nvim_create_autocmd("InsertEnter", {
+  callback = function()
+    vim.cmd("noh")
+  end,
+})
+
