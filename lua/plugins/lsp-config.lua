@@ -34,6 +34,21 @@ return {
 					},
 				},
 			})
+      lspconfig.gopls.setup({
+                cmd = { "gopls" },
+                settings = {
+                    gopls = {
+                        analyses = {
+                            unusedparams = true,
+                        },
+                        staticcheck = true,
+                    },
+                },
+                on_attach = function(client, bufnr)
+                    -- You can add any additional setup needed for gopls here,
+                    -- but keybindings are already handled in your keybinds.lua.
+                end,
+            })
 			lspconfig.lua_ls.setup({})
 		end,
 	},
