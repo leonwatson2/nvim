@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 
 vim.keymap.set("i", "jk", "<ESC>", { desc = "Leaves Insert Mode"})
-vim.keymap.set("n", "<leader>ef", function()
+vim.keymap.set("n", "<leader>ff", function()
 
   vim.cmd("w")
 
