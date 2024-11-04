@@ -13,7 +13,7 @@ vim.opt.splitright = true
 local osName = vim.loop.os_uname().sysname
 vim.opt.splitbelow = true
 if(osName == "Windows_NT") then
-  vim.opt.shell = 'bash.exe'
+  vim.opt.shell = 'cmd.exe'
 elseif(osName == "Darwin") then
   vim.opt.shell = '/bin/bash'
 end

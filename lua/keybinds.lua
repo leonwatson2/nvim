@@ -1,11 +1,50 @@
 vim.g.mapleader = " "
+-- Key mappings for ctrl to command key on mac
+local ctrl = vim.loop.os_uname().sysname == "Darwin" and "<D-" or "<C-"
 
 vim.keymap.set("i", "jk", "<ESC>", { desc = "Leaves Insert Mode"})
-vim.keymap.set("n", "<leader>ef", function()
+
+vim.keymap.set("n", "<leader>ff", function()
 
   vim.cmd("w")
+  vim.cmd("set shell=cmd")
+ vim.keymap.set("n", "<leader>ff", function()
+  -- Save the current file
+  vim.cmd("w")
 
-  vim.cmd("!npx eslint --fix %")
+  -- Temporarily change the shell to `cmd`
+  local original_shell = vim.o.shell
+  vim.o.shell = "cmd"
+
+  -- Run eslint asynchronously
+  local handle = vim.loop.spawn("npx", {
+    args = { "eslint", "--fix", vim.fn.expand("%") },
+    stdio = nil,
+  }, function(code, signal)
+    -- Restore the original shell
+    vim.schedule(function()
+      vim.o.shell = original_shell
+    end)
+
+    if code == 0 then
+      -- Reload the buffer if eslint finishes successfully
+      vim.schedule(function()
+        vim.cmd("edit")
+        print("ESLint fix applied and file reloaded")
+      end)
+    else
+      print("ESLint fix failed with exit code: " .. code .. " and signal: " .. signal)
+    end
+  end)
+
+  if not handle then
+    print("Failed to run ESLint")
+    -- Ensure the shell is reverted in case of failure
+    vim.o.shell = original_shell
+  end
+end, { noremap = true, silent = true, desc = "Fix with ESLint and Reload" })
+
+ vim.cmd("!npx eslint --fix %")
 
   vim.cmd("edit")
 end, { noremap = true, silent = true, desc = "Fix with ESLint and Reload" })

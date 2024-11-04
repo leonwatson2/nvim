@@ -19,4 +19,8 @@ vim.api.nvim_create_autocmd("InsertEnter", {
     vim.cmd("noh")
   end,
 })
-
+vim.api.nvim_create_autocmd("InsertLeave", {
+  callback = function()
+    require("copilot.suggestion").dismiss()
+  end,
+});
