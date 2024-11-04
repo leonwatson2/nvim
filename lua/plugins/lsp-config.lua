@@ -29,8 +29,8 @@ return {
 						-- other preferences...
 						importModuleSpecifierPreference = "non-relative",
 						importModuleSpecifierEnding = "minimal",
-            renameMatchingJsxTag = true,
-            jsxAttributeCompletionStyle = "auto"
+						renameMatchingJsxTag = true,
+						jsxAttributeCompletionStyle = "auto",
 					},
 				},
 			})
