@@ -3,7 +3,10 @@ vim.g.mapleader = " "
 local ctrl = vim.loop.os_uname().sysname == "Darwin" and "<D-" or "<C-"
 
 vim.keymap.set("i", "jk", "<ESC>", { desc = "Leaves Insert Mode"})
+<<<<<<< HEAD
 
+=======
+>>>>>>> c993de8f0d2eb5650a15e753aeab56808cb345f8
 vim.keymap.set("n", "<leader>ff", function()
 
   vim.cmd("w")
