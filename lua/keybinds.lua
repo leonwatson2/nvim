@@ -148,3 +148,5 @@ end
 -- Keybinding to toggle Copilot
 vim.keymap.set("n", "<leader>cop", toggle_copilot, { noremap = true, silent = true, desc = "Toggle Copilot" })
 
+-- Neogit
+vim.keymap.set("n", "<leader>gc", ":Neogit<CR>", { noremap = true, silent = true, desc = "Open Neogit" })

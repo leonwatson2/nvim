@@ -21,6 +21,9 @@ vim.api.nvim_create_autocmd("InsertEnter", {
 })
 vim.api.nvim_create_autocmd("InsertLeave", {
   callback = function()
-    require("copilot.suggestion").dismiss()
+    local status, copilot = pcall(require, "copilot.suggestion")
+    if status and copilot then
+      copilot.dismiss()
+    end
   end,
 });

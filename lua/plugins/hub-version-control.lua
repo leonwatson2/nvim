@@ -1,8 +1,20 @@
 return {
-  "lewis6991/gitsigns.nvim",
-  event = { "BufReadPre", "BufNewFile" },
-  opts = {
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "sindrets/diffview.nvim",
 
+      "nvim-telescope/telescope.nvim", -- optional
+    },
+    config = true,
+  },
+  "lewis6991/gitsigns.nvim",
+  config = function()
+    require("gitsigns").setup()
+  end,
+  opts = {
+    event = { "VimEnter", "BufNewFile" },
     on_attach = function(bufnr)
       local gs = package.loaded.gitsigns
 
@@ -36,6 +48,7 @@ return {
       end, "Blame line")
 
       map("n", "<leader>hB", gs.toggle_current_line_blame, "Toggle Line Blame")
+
     end,
   },
 }
