@@ -3,10 +3,6 @@ vim.g.mapleader = " "
 local ctrl = vim.loop.os_uname().sysname == "Darwin" and "<D-" or "<C-"
 
 vim.keymap.set("i", "jk", "<ESC>", { desc = "Leaves Insert Mode"})
-<<<<<<< HEAD
-
-=======
->>>>>>> c993de8f0d2eb5650a15e753aeab56808cb345f8
 vim.keymap.set("n", "<leader>ff", function()
 
   vim.cmd("w")
@@ -53,13 +49,13 @@ end, { noremap = true, silent = true, desc = "Fix with ESLint and Reload" })
 end, { noremap = true, silent = true, desc = "Fix with ESLint and Reload" })
 
 -- window navigations
-vim.keymap.set("n", "wb", "<C-w>h", { noremap = true, silent = false, desc = "Move to left window" })
-vim.keymap.set("n", "wj", "<C-w>j", { noremap = true, silent = true, desc = "Move to window below" })
-vim.keymap.set("n", "wk", "<C-w>k", { noremap = true, silent = true, desc = "Move to window above" })
-vim.keymap.set("n", "wl", "<C-w>l", { noremap = true, silent = true, desc = "Move to right window" })
-vim.keymap.set("n", "<Leader>tt", "<C-w>t", { noremap = true, silent = true, desc = "Move to top window" })
-vim.keymap.set("n", "<Leader>pp", "<C-w>p", { noremap = true, silent = true, desc = "Switch to previous window" })
-vim.keymap.set("n", "<Leader>ww", "<C-w>w", { noremap = true, silent = true, desc = "Switch to next window" })
+vim.keymap.set("n", "wb", ctrl.."-w>h", { noremap = true, silent = false, desc = "Move to left window" })
+vim.keymap.set("n", "wj", ctrl.."-w>j", { noremap = true, silent = true, desc = "Move to window below" })
+vim.keymap.set("n", "wk", ctrl.."-w>k", { noremap = true, silent = true, desc = "Move to window above" })
+vim.keymap.set("n", "wl", ctrl.."-w>l", { noremap = true, silent = true, desc = "Move to right window" })
+vim.keymap.set("n", "<Leader>tt", ctrl.."-w>t", { noremap = true, silent = true, desc = "Move to top window" })
+vim.keymap.set("n", "<Leader>pp", ctrl.."-w>p", { noremap = true, silent = true, desc = "Switch to previous window" })
+vim.keymap.set("n", "<Leader>ww", ctrl.."-w>w", { noremap = true, silent = true, desc = "Switch to next window" })
 
 -- Copy current line up (Alt-J) or down (Alt-K)
 vim.keymap.set("n", "<A-K>", ":m-2<CR>==", { noremap = true, silent = true, desc = "Move line up" })
@@ -68,18 +64,18 @@ vim.keymap.set("n", "<A-S-Down>", ":m+1<CR>==", { noremap = true, silent = true,
 vim.keymap.set("n", "<A-S-Up>", ":m-2<CR>==", { noremap = true, silent = true, desc = "Move line up with Shift" })
 
 -- terminal exit commands
-vim.keymap.set("t", "<C-d>", [[<C-\><C-n>]], { noremap = true, desc = "Exit terminal mode" })
+vim.keymap.set("t", ctrl.."-d>", [[<C-\><C-n>]], { noremap = true, desc = "Exit terminal mode" })
 vim.keymap.set("t", "<ESC>", [[<C-d>]], { noremap = true, desc = "Exit terminal" })
 
 -- copy paste commands
-vim.keymap.set("n", "<C-v>", '"+p', { noremap = true, silent = true, desc = "Paste from clipboard" })
-vim.keymap.set("v", "<C-e>", '"+y', { noremap = true, silent = true, desc = "Copy to clipboard" })
+vim.keymap.set("n", ctrl.."-v>", '"+p', { noremap = true, silent = true, desc = "Paste from clipboard" })
+vim.keymap.set("v", ctrl.."-e>", '"+y', { noremap = true, silent = true, desc = "Copy to clipboard" })
 
 -- search
 vim.keymap.set("n", "<Leader>/", ":noh<CR>", { noremap = true, silent = true, desc = "Clear search highlights" })
 
 -- saving
-vim.keymap.set("n", "<C-Z>", ":w<CR>", { noremap = true, silent = false, desc = "Save file" })
+vim.keymap.set("n", ctrl.."-Z>", ":w<CR>", { noremap = true, silent = false, desc = "Save file" })
 
 -- info
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show hover info" })
