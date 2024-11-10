@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 -- Key mappings for ctrl to command key on mac
 local ctrl = vim.loop.os_uname().sysname == "Darwin" and "<D-" or "<C-"
-
 vim.keymap.set("i", "jk", "<ESC>", { desc = "Leaves Insert Mode"})
 vim.keymap.set("n", "<leader>ff", function()
 
@@ -49,13 +48,13 @@ end, { noremap = true, silent = true, desc = "Fix with ESLint and Reload" })
 end, { noremap = true, silent = true, desc = "Fix with ESLint and Reload" })
 
 -- window navigations
-vim.keymap.set("n", "wb", ctrl.."-w>h", { noremap = true, silent = false, desc = "Move to left window" })
-vim.keymap.set("n", "wj", ctrl.."-w>j", { noremap = true, silent = true, desc = "Move to window below" })
-vim.keymap.set("n", "wk", ctrl.."-w>k", { noremap = true, silent = true, desc = "Move to window above" })
-vim.keymap.set("n", "wl", ctrl.."-w>l", { noremap = true, silent = true, desc = "Move to right window" })
-vim.keymap.set("n", "<Leader>tt", ctrl.."-w>t", { noremap = true, silent = true, desc = "Move to top window" })
-vim.keymap.set("n", "<Leader>pp", ctrl.."-w>p", { noremap = true, silent = true, desc = "Switch to previous window" })
-vim.keymap.set("n", "<Leader>ww", ctrl.."-w>w", { noremap = true, silent = true, desc = "Switch to next window" })
+vim.keymap.set("n", "wb", "<C-w>h", { noremap = true, silent = false, desc = "Move to left window" })
+vim.keymap.set("n", "wj", "<C-w>j", { noremap = true, silent = true, desc = "Move to window below" })
+vim.keymap.set("n", "wk", "<C-w>k", { noremap = true, silent = true, desc = "Move to window above" })
+vim.keymap.set("n", "wl", "<C-w>l", { noremap = true, silent = true, desc = "Move to right window" })
+vim.keymap.set("n", "<Leader>tt", "<C-w>t", { noremap = true, silent = true, desc = "Move to top window" })
+vim.keymap.set("n", "<Leader>pp", "<C-w>p", { noremap = true, silent = true, desc = "Switch to previous window" })
+vim.keymap.set("n", "<Leader>ww", "<C-w>w", { noremap = true, silent = true, desc = "Switch to next window" })
 
 -- Copy current line up (Alt-J) or down (Alt-K)
 vim.keymap.set("n", "<A-K>", ":m-2<CR>==", { noremap = true, silent = true, desc = "Move line up" })
