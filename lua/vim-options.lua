@@ -15,6 +15,7 @@ local osName = vim.loop.os_uname().sysname
 vim.opt.splitbelow = true
 if(osName == "Windows_NT") then
   vim.opt.shell = 'cmd.exe'
+  vim.g.node_host_prog = "/c/Program Files/nodejs/node"
 elseif(osName == "Darwin") then
   vim.opt.shell = '/bin/bash'
 end
