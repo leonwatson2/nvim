@@ -79,6 +79,7 @@ vim.keymap.set("n", ctrl.."-Z>", ":w<CR>", { noremap = true, silent = false, des
 -- info
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Show hover info" })
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Find references" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostics" })
 vim.keymap.set("n", "<leader>kd", vim.lsp.buf.type_definition, { desc = "Show type definition" })
 
