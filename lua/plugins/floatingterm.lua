@@ -93,6 +93,11 @@ vim.keymap.set("n", "<leader>tc", function() run_terminal_command("\x03") end,
 vim.keymap.set("n", "<leader>tdev", function() run_terminal_command("npm run dev") end,
   { desc = "Run dev command in terminal" })
 
+vim.keymap.set("n", "<leader>tstart", function() run_terminal_command("npm run start") end,
+  { desc = "Run start command in terminal" })
+vim.keymap.set("n", "<leader>tinstall", function() run_terminal_command("npm i") end,
+  { desc = "Run npm i command in terminal" })
+
 -- Opening Floating Terminals
 vim.keymap.set("n", "<leader>tL", function() toggle_floating_term({ size = "large" }) end,
   { desc = "Open Large Floating Terminal" })
