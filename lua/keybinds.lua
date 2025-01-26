@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 -- Key mappings for ctrl to command key on mac
-local ctrl = vim.loop.os_uname().sysname == "Darwin" and "<D-" or "<C-"
+local ctrl = vim.loop.os_uname().sysname == "Darwin" and "<C-" or "<C-"
 vim.keymap.set("i", "jk", "<ESC>", { desc = "Leaves Insert Mode"})
 vim.keymap.set("n", "<leader>ff", function()
 

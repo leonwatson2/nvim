@@ -5,6 +5,7 @@ local state = {
   }
 }
 
+local DEFAULT_PEEF_TIME = 3000
 local function open_floating_terminal(opts)
   local width = vim.o.columns
   local height = vim.o.lines
@@ -48,11 +49,11 @@ local function open_floating_terminal(opts)
 
   if peek then
     vim.api.nvim_win_set_option(win, "winblend", 60)
-    vim.defer_fn(function ()
+    vim.defer_fn(function()
       if vim.api.nvim_win_is_valid(win) then
         vim.api.nvim_win_hide(win)
       end
-    end, 3000)
+    end, opts.peektime)
   else
     vim.api.nvim_win_set_option(win, "winblend", 0)
   end
@@ -79,10 +80,17 @@ end
 
 local function toggle_floating_term(opts)
   if state.floating.win ~= nil and vim.api.nvim_win_is_valid(state.floating.win) then
+    if vim.fn.mode() == "t" then
+      vim.cmd("stopinsert")
+    end
     vim.api.nvim_win_hide(state.floating.win)
     state.floating.win = nil
   else
-    state.floating = open_floating_terminal({ size = opts.size, buf = state.floating.buf, peek = opts.peek or false})
+    if opts.peek then
+      print("Peeking for " .. vim.v.count .. " seconds")
+    end
+    state.floating = open_floating_terminal({ size = opts.size, buf = state.floating.buf, peek = opts.peek or false, peektime =
+    vim.v.count > 0 and vim.v.count * 1000 or DEFAULT_PEEF_TIME })
   end
 end
 
@@ -108,6 +116,8 @@ vim.keymap.set("n", "<leader>tl", function() toggle_floating_term({ size = "left
 vim.keymap.set("n", "<leader>tr", function() toggle_floating_term({ size = "right" }) end,
   { desc = "Open Right Floating Terminal" })
 
+vim.keymap.set("t", "<ESC>", function() toggle_floating_term({ size = "left" }) end,
+  { desc = "Open Left Floating Terminal" })
 -- Peeking Floating Terminals
 vim.keymap.set("n", "<leader>tpL", function() toggle_floating_term({ size = "large", peek = true }) end,
   { desc = "Open Large Floating Terminal" })
@@ -118,4 +128,7 @@ vim.keymap.set("n", "<leader>tpl", function() toggle_floating_term({ size = "lef
 vim.keymap.set("n", "<leader>tpr", function() toggle_floating_term({ size = "right", peek = true }) end,
   { desc = "Open Right Floating Terminal" })
 
-return {}
+return {
+  toggle_floating_term = toggle_floating_term,
+  run_terminal_command = run_terminal_command,
+}

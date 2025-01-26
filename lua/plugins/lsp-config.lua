@@ -8,10 +8,10 @@ return {
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
-      local isMac = vim.loop.os_uname().sysname == "Darwin"
-      local tsserver = isMac and "tsserver" or "ts_ls"
+      -- local isMac = vim.loop.os_uname().sysname == "Darwin"
+      local tsserver = "ts_ls"
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "gopls", tsserver },
+				ensure_installed = { "lua_ls", "ts_ls" },
 			})
 		end,
 	},
@@ -25,7 +25,7 @@ return {
 		config = function()
 			local lspconfig = require("lspconfig")
       local isMac = vim.loop.os_uname().sysname == "Darwin"
-      local tsserver = isMac and lspconfig.tsserver or lspconfig.ts_ls
+      local tsserver = lspconfig.ts_ls
 			tsserver.setup({
 				init_options = {
 					preferences = {
