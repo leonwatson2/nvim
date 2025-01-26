@@ -21,6 +21,6 @@ require("custom-commands")
 require("keybinds")
 require("lazy").setup("plugins")
 require("snippets")
-
+require("floatingterm")
 
 
