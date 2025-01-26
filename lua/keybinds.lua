@@ -64,7 +64,6 @@ vim.keymap.set("n", "<A-S-Up>", ":m-2<CR>==", { noremap = true, silent = true, d
 
 -- terminal exit commands
 vim.keymap.set("t", ctrl.."-d>", [[<C-\><C-n>]], { noremap = true, desc = "Exit terminal mode" })
-vim.keymap.set("t", "<ESC>", [[<C-d>]], { noremap = true, desc = "Exit terminal" })
 
 -- copy paste commands
 vim.keymap.set("n", ctrl.."-v>", '"+p', { noremap = true, silent = true, desc = "Paste from clipboard" })
